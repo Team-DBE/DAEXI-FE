@@ -44,4 +44,8 @@ const Inputbox = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.5);
 `;
 
+const Submitbox = styled.div`
+  
+`;
+
 export default Login;

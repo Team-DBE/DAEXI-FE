@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
+  width: 100%;
   padding: 18px 150px;
   display: flex;
   justify-content: space-between;
@@ -36,7 +38,7 @@ export const NavList = styled.ul`
   gap: 100px;
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
   font-size: 20px;
   text-decoration: none;
   color: #343a40;
@@ -55,6 +57,7 @@ export const LoginButton = styled.button`
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
   &:hover {
     background-color: #EB8100;
   }
@@ -68,6 +71,7 @@ export const SignUpButton = styled.button`
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
   &:hover {
     background-color: #737373;
   }

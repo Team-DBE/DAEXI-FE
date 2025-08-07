@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import LogoImage from "../../assets/Logo/Logo_small.svg";
 import HomeIcon from "../../assets/images/icon-campaign.svg";
 import PartyIcon from "../../assets/images/icon-group.svg";
 import ChatIcon from "../../assets/images/icon-comment.svg";
 import MyPageIcon from "../../assets/images/icon-person.svg";
+
 import {
   HeaderWrapper,
   HeaderLeftArea,
@@ -25,26 +28,30 @@ const Header = () => {
       </HeaderLeftArea>
       <HeaderMiddleArea>
         <NavList>
-          <NavItem href="#">
+          <NavItem to="/home">
             <Icon src={HomeIcon} alt="icon" />홈
           </NavItem>
-          <NavItem href="#">
+          <NavItem to="/">
             <Icon src={PartyIcon} alt="icon" />
             파티
           </NavItem>
-          <NavItem href="#">
+          <NavItem to="/">
             <Icon src={ChatIcon} alt="icon" />
             채팅
           </NavItem>
-          <NavItem href="#">
+          <NavItem to="/">
             <Icon src={MyPageIcon} alt="icon" />
             마이페이지
           </NavItem>
         </NavList>
       </HeaderMiddleArea>
       <HeaderRightArea>
-        <LoginButton>로그인</LoginButton>
-        <SignUpButton>회원가입</SignUpButton>
+        <LoginButton as={Link} to="/login">
+          로그인
+        </LoginButton>
+        <SignUpButton as={Link} to="/signup">
+          회원가입
+        </SignUpButton>
       </HeaderRightArea>
     </HeaderWrapper>
   );

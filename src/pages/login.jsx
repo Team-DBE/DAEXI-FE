@@ -1,18 +1,11 @@
 import styled from "styled-components";
 import "../components/reset.css";
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-`;
+import LogoImage from "../assets/Logo/Logo_small.svg";
 
 function Login() {
   return (
     <Body>
-      <GlobalStyle />
-      <Logo src="/src/assets/Logo/Logo_small.svg"></Logo>
+      <Logo src={LogoImage}></Logo>
       <LoginDiv>
         <Logintitle>로그인</Logintitle>
         <Wrapper>

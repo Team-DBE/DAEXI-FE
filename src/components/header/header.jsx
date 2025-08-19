@@ -24,7 +24,9 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderLeftArea>
-        <Logo src={LogoImage} alt="Logo" />
+        <Link to="/home">
+          <Logo src={LogoImage} alt="Logo" />
+        </Link>
       </HeaderLeftArea>
       <HeaderMiddleArea>
         <NavList>

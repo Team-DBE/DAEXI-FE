@@ -1,5 +1,6 @@
 import React from "react";
 import LogoImage from "../../assets/Logo/Logo_small.svg";
+import { Link } from "react-router-dom";
 import {
   FooterWrapper,
   FooterTopWrapper,
@@ -24,7 +25,9 @@ const Footer = () => {
       <FooterTopWrapper>
         <LeftArea>
           <LeftTop>
-            <Logo src={LogoImage}></Logo>
+            <Link to="/home">
+              <Logo src={LogoImage} alt="Logo" />
+            </Link>{" "}
             <SubText>
               모두가 편리하게 이동할 수 있도록
               <br />
@@ -53,11 +56,21 @@ const Footer = () => {
           <Navsection>
             <NavTitle>빠른메뉴</NavTitle>
             <NavList>
-              <a href="#">홈</a>
-              <a href="#">파티리스트</a>
-              <a href="#">로그인</a>
-              <a href="#">회원가입</a>
-              <a href="#">마이페이지</a>
+              <Link to="/home">
+                <a href="#">홈</a>
+              </Link>
+              <Link to="/">
+                <a href="#">파티리스트</a>
+              </Link>
+              <Link to="/login">
+                <a href="#">로그인</a>
+              </Link>
+              <Link to="/signup">
+                <a href="#">회원가입</a>
+              </Link>
+              <Link to="/mypage">
+                <a href="#">마이페이지</a>
+              </Link>
             </NavList>
           </Navsection>
 

@@ -39,7 +39,7 @@ const Header = () => {
             <Icon src={ChatIcon} alt="icon" />
             채팅
           </NavItem>
-          <NavItem to="/">
+          <NavItem to="/Mypage">
             <Icon src={MyPageIcon} alt="icon" />
             마이페이지
           </NavItem>

@@ -1,4 +1,5 @@
 import "../../components/reset.css";
+import { Link } from "react-router-dom";
 import LogoImage from "../../assets/Logo/Logo_small.svg";
 import {
   Body,
@@ -29,7 +30,9 @@ function Login() {
           <ButtonWrapper>
             <Button bgColor="#FF8C00" type="submit">로그인</Button>
             <Line>또는</Line>
-            <Button bgColor="rgba(0,0,0,0.3)">회원가입</Button>
+            <Link to='/signup'>
+              <Button bgColor="rgba(0,0,0,0.3)" type="button" >회원가입</Button>
+            </Link>
           </ButtonWrapper>
         </form>
       </LoginDiv>

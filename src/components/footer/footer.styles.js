@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem";
 
 /* ──────────────── 푸터 전체 래퍼 ──────────────── */
 export const FooterWrapper = styled.footer`
   width: 100%;
   margin-top: 50px;
-  padding: 20px 180px 10px;
-  background-color: #323232;
+  padding: 20px 350px 10px;
+  background-color: ${colors.gray[900]};
   box-sizing: border-box;
 
   display: flex;
@@ -43,10 +44,10 @@ export const Logo = styled.img`
 `;
 
 export const SubText = styled.div`
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.3;
-  color: #9f9f9f;
+  color: ${colors.gray[700]};
 `;
 
 export const LeftBottom = styled.div`
@@ -65,14 +66,14 @@ export const Description = styled.div`
 export const Title = styled.div`
   font-size: 15px;
   font-weight: 700;
-  color: #f0f0f0;
+  color: ${colors.gray[100]};
   width: 80px;
 `;
 
 export const Content = styled.div`
   font-size: 14px;
   font-weight: 400;
-  color: #b1afaf;
+  color: ${colors.gray[500]};
 `;
 
 /* ──────────────── 오른쪽 영역 (NAV) ──────────────── */
@@ -94,7 +95,7 @@ export const Navsection = styled.div`
 export const NavTitle = styled.div`
   font-size: 16px;
   font-weight: 700;
-  color: #fafafa;
+  color: ${colors.gray[100]};
   margin-bottom: 12px;
 `;
 
@@ -105,10 +106,10 @@ export const NavList = styled.div`
   a {
     font-size: 14px;
     font-weight: 400;
-    color: #b1afaf;
+    color: ${colors.gray[500]};
     text-decoration: none;
     &:hover {
-      color: #f0f0f0;
+      color: ${colors.gray[100]};
       font-weight: 600;
     }
   }
@@ -118,9 +119,9 @@ export const Copyright = styled.div`
   width: 100%;
   text-align: center;
   font-size: 13px;
-  color: #b1afaf;
+  color: ${colors.gray[500]};
   margin-top: 20px;
-  border-top: 1px solid #444444;
+  border-top: 1px solid ${colors.gray[700]};
   p {
     margin-top: 12px;
     padding: 0;

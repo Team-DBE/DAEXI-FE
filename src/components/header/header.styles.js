@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem";
 
 export const HeaderWrapper = styled.header`
   width: 100%;
@@ -7,8 +8,8 @@ export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fafafa;
-  border-bottom: 2.5px solid #FF8C00;
+  background-color: ${colors.background};
+  border-bottom: 2.5px solid ${colors.gray[600]};
 `;
 
 export const HeaderLeftArea = styled.div`
@@ -41,39 +42,39 @@ export const NavList = styled.ul`
 export const NavItem = styled(Link)`
   font-size: 20px;
   text-decoration: none;
-  color: #343a40;
+  color: ${colors.text};
   font-weight: bold;
   &:hover {
-    color: #FF8C00;
+    color: ${colors.primary};
   }
 `;
 
 export const LoginButton = styled.button`
   margin-right: 10px;
   padding: 10px 20px;
-  background-color: #FF8C00;
-  color: #fefefe;
+  background-color: ${colors.btnBasic.default};
+  color: ${colors.gray[100]};
   font-weight: bold;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    background-color: #EB8100;
+    background-color: ${colors.btnBasic.hover};
   }
 `;
 
 export const SignUpButton = styled.button`
   padding: 10px 20px;
-  background-color: #797979;
-  color: #fefefe;
+  background-color: ${colors.btnGray.default};
+  color: ${colors.gray[100]};
   font-weight: bold;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    background-color: #737373;
+    background-color: ${colors.btnGray.hover};
   }
 `;
 

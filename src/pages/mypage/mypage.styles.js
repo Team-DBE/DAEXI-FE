@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem"
 
 //전체 컨테이너
 export const Contents = styled.div`
@@ -16,8 +17,8 @@ export const LeftContainer = styled.div`
   width: 400px;
   height: 1256px;
 
-  background: #FFFFFF;
-  box-shadow: 8px 0px 5px rgba(0, 0, 0, 0.25);
+  background: ${colors.background};
+  box-shadow: 8px 0px 5px ${colors.gray[400]};
 `;
 
 //이름 
@@ -35,7 +36,7 @@ export const Name = styled.h2`
 
   text-align: center;
 
-  color: #000000;
+  color: ${colors.text};
 `;
 
 //설명
@@ -52,7 +53,7 @@ export const Description = styled.span`
   line-height: 24px;
   text-align: center;
 
-  color: rgba(0, 0, 0, 0.3);
+  color: ${colors.gray[500]};
 `;
 
 //정보 제목
@@ -67,7 +68,7 @@ export const InfoTitle = styled.h2`
   line-height: 65px;
   text-align: center;
 
-  color: #000000;
+  color: ${colors.text};
 
   margin-bottom: 40px;
 `;  
@@ -94,9 +95,9 @@ export const PersonalInfoContainer = styled.div`
   width: auto;
   height: 324px;
 
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+  background: ${colors.background};
+  border: 1px solid ${colors.gray[300]};
+  box-shadow: 4px 4px 5px ${colors.gray[400]};
   border-radius: 20px;
 
   margin-bottom: 120px;
@@ -117,7 +118,7 @@ export const InfoLabel = styled.span`
   flex: 0 0 200px;
   font-size: 40px;
   font-weight: 600;
-  color: #000000;
+  color: ${colors.text};
 `;
 
 // 아이디, 이름에 대한 내용
@@ -125,7 +126,7 @@ export const InfoValue = styled.span`
   flex: 1;
   font-size: 40px;
   font-weight: 600;
-  color: #000000;
+  color: ${colors.text};
 
   display: flex;
   align-items: center;
@@ -144,9 +145,9 @@ export const AccountInfoContainer = styled.div`
   width: auto;
   height: auto;
 
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+  background: ${colors.background};
+  border: 1px solid ${colors.gray[300]};
+  box-shadow: 4px 4px 5px ${colors.gray[400]};
   border-radius: 20px;
 `;
 
@@ -163,7 +164,7 @@ export const ProfileImage = styled.img`
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ccc;
+  border: 2px solid ${colors.gray[300]};
 `;
 
 // 수정 아이콘 (연필)

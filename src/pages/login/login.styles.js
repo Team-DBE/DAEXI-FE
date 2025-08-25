@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem"
 
 export const Body = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ export const LoginDiv = styled.div`
   align-items: center;
   width: 600px;
   height: 700px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid ${colors.gray[400]};
   border-radius: 10px;
 `;
 
@@ -45,14 +46,14 @@ export const Inputbox = styled.input`
   padding-left: 30px;
   padding-right: 30px;
   font-size: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${colors.gray[400]};
   border-radius: 10px;
 `;
 
 export const Forget = styled.h2`
   padding-top: 15px;
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.5);
+  color: ${colors.gray[500]};
   text-align: right;
   cursor: pointer;
 `;
@@ -68,7 +69,7 @@ export const Button = styled.button`
   width: 100%;
   height: 60px;
   background-color: ${(props) => props.bgColor};
-  color: white;
+  color: ${colors.gray[100]};
   font-size: 25px;
   font-weight: 600;
   cursor: pointer;
@@ -77,7 +78,7 @@ export const Button = styled.button`
 export const Line = styled.div`
   display: flex;
   align-items: center;
-  color: rgba(0,0,0,0.3);
+  color: ${colors.gray[500]};
   font-size: 17px;
   font-weight: 500;
   margin: 20px 0;
@@ -87,7 +88,7 @@ export const Line = styled.div`
     content: "";
     flex: 1;
     height: 1px;
-    background: rgba(0,0,0,0.3);
+    background: ${colors.gray[400]};
   }
 
   &::before {

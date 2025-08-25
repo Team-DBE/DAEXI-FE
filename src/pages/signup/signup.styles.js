@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem"
 
 export const Body = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const SignupDiv = styled.div`
   padding: 70px 0;
   width: 600px;
   height: 700px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid ${colors.gray[300]};
   border-radius: 10px;
 `;
 
@@ -45,7 +46,7 @@ export const Inputbox = styled.input`
   padding-left: 30px;
   padding-right: 30px;
   font-size: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${colors.gray[400]};
   border-radius: 10px;
 `;
 
@@ -60,7 +61,7 @@ export const Button = styled.button`
   width: 100%;
   height: 60px;
   background-color: ${(props) => props.bgColor};
-  color: white;
+  color: ${colors.gray[100]};
   font-size: 25px;
   font-weight: 600;
   cursor: pointer;
@@ -84,17 +85,17 @@ export const CheckboxInput = styled.input`
   margin: 0;
   margin-right: 10px;
   cursor: pointer;
-  accent-color: #ff8c00;
+  accent-color: ${colors.primary};
 `;
 
 export const Text = styled.span`
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
+  color: ${colors.gray[700]};
   user-select: none;
 `;
 
 export const Linktext = styled.a`
   font-size: 14px;
-  color: #0000FF;
+  color: ${colors.info};
 `;
 

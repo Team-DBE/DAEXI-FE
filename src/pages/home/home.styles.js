@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem";
 
 export const Body = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ export const NormalText = styled.p`
   font-size: 90px;
   font-weight: 700;
   line-height: 1.2;
-  color: #1a1a1a;
+  color: ${colors.text};
   margin: 10px 0;
   text-align: center;
 `;
@@ -46,13 +47,13 @@ export const SmallText = styled.span`
   font-size: 50px;
   font-weight: 700;
   line-height: 1.2;
-  color: #1a1a1a;
+  color: ${colors.text};
   margin: 10px 0;
   text-align: center;
 `;
 
 export const Highlight = styled.span`
-  color: #ff8c00;
+  color: ${colors.primary};
 `;
 
 export const Img = styled.img`

@@ -1,4 +1,4 @@
-import "../../components/reset.css";
+import "../../designSystem/reset.css"
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
 import {

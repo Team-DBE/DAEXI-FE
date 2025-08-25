@@ -1,11 +1,11 @@
-import "../../components/reset.css";
+import "../../designSystem/reset.css"
 import LogoImage from "../../assets/Logo/Logo_small.svg";
 import {
   Body,
   SignupDiv,
   Signuptitle,
   Logo,
-  Wrapper,  
+  Wrapper,
   Inputbox,
   ButtonWrapper,
   Button,
@@ -13,7 +13,7 @@ import {
   Text,
   Linktext,
   CheckboxWrapper,
-  CheckboxItem
+  CheckboxItem,
 } from "./signup.styles.js";
 
 function Signup() {
@@ -31,16 +31,22 @@ function Signup() {
             <CheckboxWrapper>
               <CheckboxItem>
                 <CheckboxInput type="checkbox" />
-                <Text>[필수] <Linktext href="">개인정보 수집 및 이용</Linktext>에 동의합니다</Text>
-                </CheckboxItem>
+                <Text>
+                  [필수] <Linktext href="">개인정보 수집 및 이용</Linktext>에 동의합니다
+                </Text>
+              </CheckboxItem>
               <CheckboxItem>
                 <CheckboxInput type="checkbox" />
-                <Text>[필수] <Linktext href="">최종이용자 이용약관</Linktext>에 동의합니다</Text>
+                <Text>
+                  [필수] <Linktext href="">최종이용자 이용약관</Linktext>에 동의합니다
+                </Text>
               </CheckboxItem>
             </CheckboxWrapper>
           </Wrapper>
           <ButtonWrapper>
-            <Button bgColor="#FF8C00" type="submit" >완료</Button>
+            <Button bgColor="#FF8C00" type="submit">
+              완료
+            </Button>
           </ButtonWrapper>
         </form>
       </SignupDiv>

@@ -1,17 +1,17 @@
-import "../../components/reset.css";
+import "../../designSystem/reset.css"
 import { Link } from "react-router-dom";
 import LogoImage from "../../assets/Logo/Logo_small.svg";
 import {
   Body,
   LoginDiv,
-  Logintitle, 
+  Logintitle,
   Logo,
   Wrapper,
-  Inputbox, 
+  Inputbox,
   Forget,
   ButtonWrapper,
   Button,
-  Line
+  Line,
 } from "./login.styles.js";
 
 function Login() {
@@ -28,10 +28,14 @@ function Login() {
             <Forget>비밀번호를 잊어버렸어요</Forget>
           </Wrapper>
           <ButtonWrapper>
-            <Button bgColor="#FF8C00" type="submit">로그인</Button>
+            <Button bgColor="#FF8C00" type="submit">
+              로그인
+            </Button>
             <Line>또는</Line>
-            <Link to='/signup'>
-              <Button bgColor="rgba(0,0,0,0.3)" type="button" >회원가입</Button>
+            <Link to="/signup">
+              <Button bgColor="rgba(0,0,0,0.3)" type="button">
+                회원가입
+              </Button>
             </Link>
           </ButtonWrapper>
         </form>

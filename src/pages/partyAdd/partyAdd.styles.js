@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { colors } from "../../designSystem/DesignSystem";
 
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   box-sizing: border-box;
-  height: 800px;
+  height: 700px;
   gap: 80px;
   padding: 20px;
   align-items: center;
@@ -25,18 +33,18 @@ export const MapBox = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 32px;
 `;
 
 export const Title = styled.h2`
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 8px;
 
   input {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     padding: 5px 10px;
     border: 2px solid ${colors.gray[400]};
@@ -57,8 +65,8 @@ export const Info = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 23px;
 `;
 
 export const InfoTitle = styled.div`
@@ -77,7 +85,7 @@ export const InfoItem = styled.div`
   gap: 8px;
 
   input {
-    font-size: 20px;
+    font-size: 19px;
     padding: 5px 10px;
     border: 2px solid ${colors.gray[400]};
     border-radius: 8px;
@@ -99,10 +107,8 @@ export const Button = styled.button`
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 20px;
-  align-self: flex-start;
   box-sizing: border-box;
-  width: 500px;
+  width: 700px;
 
   &:hover {
     background-color: ${colors.btnBasic.hover};

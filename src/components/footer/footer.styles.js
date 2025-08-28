@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../designSystem/DesignSystem";
+import { Link } from "react-router-dom";
 
 /* ──────────────── 푸터 전체 래퍼 ──────────────── */
 export const FooterWrapper = styled.footer`
@@ -93,7 +94,7 @@ export const Navsection = styled.div`
 `;
 
 export const NavTitle = styled.div`
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: ${colors.gray[100]};
   margin-bottom: 12px;
@@ -103,15 +104,16 @@ export const NavList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  a {
-    font-size: 14px;
-    font-weight: 400;
-    color: ${colors.gray[500]};
-    text-decoration: none;
-    &:hover {
-      color: ${colors.gray[100]};
-      font-weight: 600;
-    }
+`;
+
+export const NavLink = styled(Link)`
+  font-size: 15px;
+  font-weight: 400;
+  color: ${colors.gray[500]};
+  text-decoration: none;
+  &:hover {
+    color: ${colors.gray[100]};
+    font-weight: 600;
   }
 `;
 

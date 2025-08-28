@@ -1,6 +1,4 @@
 import "../../designSystem/reset.css"
-import Header from "../../components/header/header.jsx";
-import Footer from "../../components/footer/footer.jsx";
 import {
   Body,
   Contents,
@@ -20,7 +18,6 @@ import R3 from "../../assets/images/img_move-con.svg";
 function Home() {
   return (
     <Body>
-      <Header />
       <Contents>
         <NormalText>
           <Highlight>DAEXI</Highlight>?
@@ -62,7 +59,6 @@ function Home() {
           <NormalText>많은 비용을 절감</NormalText>
         </Textbox>
       </Contents2>
-      <Footer />
     </Body>
   );
 }

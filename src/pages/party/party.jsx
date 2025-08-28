@@ -35,7 +35,7 @@ function Party() {
       window.kakao.maps.load(() => {
         const container = document.getElementById("map");
         const options = {
-          center: new window.kakao.maps.LatLng(xPosition, yPosition),
+          center: new window.kakao.maps.LatLng(latPosition, lngPosition),
           level: 3,
         };
 
@@ -65,7 +65,7 @@ function Party() {
         <Info>
           <InfoTitle>
             <Img src={PartyIcon1} alt="출발지" />
-            출발지
+            출발지(지도를 참고해 주세요)
           </InfoTitle>
           <InfoItem>출발지 주소</InfoItem>
         </Info>

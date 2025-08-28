@@ -61,6 +61,11 @@ export const InfoItem = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export const Button = styled.button`

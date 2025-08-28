@@ -16,6 +16,7 @@ import {
   Navsection,
   NavTitle,
   NavList,
+  NavLink,
   Copyright,
 } from "./footer.styles";
 
@@ -56,43 +57,32 @@ const Footer = () => {
           <Navsection>
             <NavTitle>빠른메뉴</NavTitle>
             <NavList>
-              <Link to="/home">
-                <a href="#">홈</a>
-              </Link>
-              <Link to="/">
-                <a href="#">파티리스트</a>
-              </Link>
-              <Link to="/login">
-                <a href="#">로그인</a>
-              </Link>
-              <Link to="/signup">
-                <a href="#">회원가입</a>
-              </Link>
-              <Link to="/mypage">
-                <a href="#">마이페이지</a>
-              </Link>
+              <NavLink to="/home">홈</NavLink>
+              <NavLink to="/">파티리스트</NavLink>
+              <NavLink to="/login">로그인</NavLink>
+              <NavLink to="/signup">회원가입</NavLink>
+              <NavLink to="/mypage">마이페이지</NavLink>
             </NavList>
           </Navsection>
 
           <Navsection>
             <NavTitle>커뮤니티</NavTitle>
             <NavList>
-              <a href="#">소개</a>
-              <a href="#">문의</a>
-              <a href="#">카카오톡</a>
-              <a href="#">디스코드</a>
-              <a href="#">개발자소개</a>
+              <NavLink to="/">소개</NavLink>
+              <NavLink to="/">문의</NavLink>
+              <NavLink to="/">카카오톡</NavLink>
+              <NavLink to="/">디스코드</NavLink>
+              <NavLink to="/">개발자소개</NavLink>
             </NavList>
           </Navsection>
 
           <Navsection>
-            <NavTitle>사용방법</NavTitle>
+            <NavTitle>고객지원</NavTitle>
             <NavList>
-              <a href="#">파티 사용방법</a>
-              <a href="#">파티 찾기방법</a>
-              <a href="#">로그인에 문제가 있나요?</a>
-              <a href="#">회원가입에 문제가 있나요?</a>
-              <a href="#">마이페이지의 정보가 변경되었나요?</a>
+              <NavLink to="/">개인정보처리방침</NavLink>
+              <NavLink to="/">서비스이용약관</NavLink>
+              <NavLink to="/">사용자권리</NavLink>
+              <NavLink to="/">버그제보</NavLink>
             </NavList>
           </Navsection>
         </RightArea>

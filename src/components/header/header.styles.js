@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: ${colors.background};
-  border-bottom: 2.5px solid ${colors.gray[600]};
+  border-bottom: 3px solid ${colors.primary};
 `;
 
 export const HeaderLeftArea = styled.div`

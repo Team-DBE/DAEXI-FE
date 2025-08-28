@@ -1,7 +1,5 @@
 import React, { useState } from "react"; // useState 훅 추가
 import "../../designSystem/reset.css"
-import Header from "../../components/header/header.jsx";
-import Footer from "../../components/footer/footer.jsx";
 import { Pencil } from "lucide-react";
 import account from "../../assets/images/account_circle.svg";
 import {
@@ -38,7 +36,6 @@ function MyPage() {
 
   return (
     <>
-      <Header />
       <Contents>
         <LeftContainer>
           <ProfileWrapper>
@@ -95,7 +92,6 @@ function MyPage() {
           </AccountInfoContainer>
         </InfoWrapper>
       </Contents>
-      <Footer />
     </>
   );
 }

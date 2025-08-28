@@ -4,6 +4,7 @@ import Login from "./pages/login/login.jsx";
 import Signup from "./pages/signup/signup.jsx";
 import Home from "./pages/home/home.jsx";
 import MyPage from "./pages/mypage/mypage.jsx";
+import Party from "./pages/party/party.jsx";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -36,7 +37,15 @@ function App() {
           }
         />
         <Route
-          path="/"
+          path="/party"
+          element={
+            <Layout>
+              <Party />
+            </Layout>
+          }
+        />
+        <Route
+          path="*"
           element={
             <Layout>
               <Home />

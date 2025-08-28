@@ -19,6 +19,10 @@ import PartyIcon3 from "../../assets/images/party_clock.svg";
 import PartyIcon4 from "../../assets/images/party_people.svg";
 
 function Party() {
+  let latPosition = 36.391828;
+  let lngPosition = 127.363368;
+
+  // 카카오맵 로드
   useEffect(() => {
     const KAKAO_KEY = import.meta.env.VITE_KAKAO_MAP_KEY;
 
@@ -31,10 +35,18 @@ function Party() {
       window.kakao.maps.load(() => {
         const container = document.getElementById("map");
         const options = {
-          center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+          center: new window.kakao.maps.LatLng(xPosition, yPosition),
           level: 3,
         };
-        new window.kakao.maps.Map(container, options);
+
+        const map = new window.kakao.maps.Map(container, options);
+
+        // 마커 추가
+        const markerPosition = new window.kakao.maps.LatLng(latPosition, lngPosition);
+        const marker = new window.kakao.maps.Marker({
+          position: markerPosition,
+        });
+        marker.setMap(map); // 지도에 마커 표시
       });
     };
 
@@ -44,7 +56,7 @@ function Party() {
   return (
     <Wrapper>
       <MapBox>
-        <div id="map" style={{ width: "100%", height: "100%" }} />
+        <div id="map" style={{ width: "100%", height: "100%", borderRadius: "12px" }} />
       </MapBox>
 
       <Content>

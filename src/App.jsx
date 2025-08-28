@@ -8,6 +8,7 @@ import Party from "./pages/party/party.jsx";
 import PartyAdd from "./pages/partyAdd/partyAdd.jsx";
 import { createGlobalStyle } from "styled-components";
 import PeopleList from "./pages/peopleList/peopleList.jsx";
+import AboutDev from "./pages/about/aboutDev.jsx";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -67,6 +68,14 @@ function App() {
           element={
             <Layout>
               <PeopleList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <AboutDev />
             </Layout>
           }
         />

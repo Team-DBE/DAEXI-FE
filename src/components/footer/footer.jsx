@@ -68,11 +68,11 @@ const Footer = () => {
           <Navsection>
             <NavTitle>커뮤니티</NavTitle>
             <NavList>
-              <NavLink to="/">소개</NavLink>
+              <NavLink to="/about">소개</NavLink>
               <NavLink to="/">문의</NavLink>
               <NavLink to="/">카카오톡</NavLink>
               <NavLink to="/">디스코드</NavLink>
-              <NavLink to="/">개발자소개</NavLink>
+              <NavLink to="/about">개발자소개</NavLink>
             </NavList>
           </Navsection>
 

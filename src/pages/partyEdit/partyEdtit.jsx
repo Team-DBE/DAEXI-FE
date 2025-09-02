@@ -1,3 +1,4 @@
+// PartyEdit.jsx
 import React, { useState, useEffect } from "react";
 import {
   Body,
@@ -10,14 +11,14 @@ import {
   InfoTitle,
   InfoItem,
   Button,
-} from "./partyAdd.styles";
+} from "./partyEdit.styles";
 
 import PartyIcon1 from "../../assets/images/party_departure.svg";
 import PartyIcon2 from "../../assets/images/party_arrive.svg";
 import PartyIcon3 from "../../assets/images/party_clock.svg";
 import PartyIcon4 from "../../assets/images/party_people.svg";
 
-function PartyAdd() {
+function PartyEdit({ initialData }) {
   let latPosition = 36.391828;
   let lngPosition = 127.363368;
 
@@ -40,6 +41,20 @@ function PartyAdd() {
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
+    if (initialData) {
+      setPartyName(initialData.partyName || "");
+      setDepartureAddress(initialData.departureAddress || "");
+      setDepartureLatLng(initialData.departureLatLng || null);
+      setArrivalAddress(initialData.arrivalAddress || "");
+      setArrivalLatLng(initialData.arrivalLatLng || null);
+      setDepartureTime(initialData.departureTime || "");
+      setArrivalTime(initialData.arrivalTime || "");
+      setPeople(initialData.people || "");
+      console.log("기존 파티 데이터", initialData);
+    }
+  }, [initialData]);
+
+  useEffect(() => {
     const KAKAO_KEY = import.meta.env.VITE_KAKAO_MAP_KEY;
     const script = document.createElement("script");
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&libraries=services,clusterer&autoload=false`;
@@ -53,12 +68,25 @@ function PartyAdd() {
           level: 3,
         });
 
-        console.log("맵 초기 좌표:", { lat: latPosition, lng: lngPosition });
-
         const geocoder = new window.kakao.maps.services.Geocoder();
 
         const depMarker = new window.kakao.maps.Marker({ map: mapInstance });
         const arrMarker = new window.kakao.maps.Marker({ map: mapInstance });
+
+        if (initialData?.departureLatLng) {
+          const pos = new window.kakao.maps.LatLng(
+            initialData.departureLatLng.lat,
+            initialData.departureLatLng.lng
+          );
+          depMarker.setPosition(pos);
+        }
+        if (initialData?.arrivalLatLng) {
+          const pos = new window.kakao.maps.LatLng(
+            initialData.arrivalLatLng.lat,
+            initialData.arrivalLatLng.lng
+          );
+          arrMarker.setPosition(pos);
+        }
 
         window.kakao.maps.event.addListener(mapInstance, "click", (mouseEvent) => {
           if (!selectMode || isSubmitted) return;
@@ -78,7 +106,7 @@ function PartyAdd() {
                   setDepartureAddress(address);
                   setDepartureLatLng({ lat: latlng.getLat(), lng: latlng.getLng() });
                   depMarker.setPosition(latlng);
-                  console.log("출발지:", {
+                  console.log("출발지 수정:", {
                     address,
                     lat: latlng.getLat(),
                     lng: latlng.getLng(),
@@ -87,7 +115,7 @@ function PartyAdd() {
                   setArrivalAddress(address);
                   setArrivalLatLng({ lat: latlng.getLat(), lng: latlng.getLng() });
                   arrMarker.setPosition(latlng);
-                  console.log("도착지:", {
+                  console.log("도착지 수정:", {
                     address,
                     lat: latlng.getLat(),
                     lng: latlng.getLng(),
@@ -105,7 +133,7 @@ function PartyAdd() {
     };
   }, [selectMode, isSubmitted]);
 
-  const handleJoinParty = () => {
+  const handleUpdateParty = () => {
     if (
       !partyName ||
       !departureLatLng ||
@@ -121,7 +149,7 @@ function PartyAdd() {
 
     setIsSubmitted(true);
     setSelectMode(null);
-    console.log("파티 생성", {
+    console.log("파티 수정", {
       partyName,
       departure: departureLatLng,
       arrival: arrivalLatLng,
@@ -146,7 +174,7 @@ function PartyAdd() {
               value={partyName}
               onChange={(e) => {
                 setPartyName(e.target.value);
-                console.log("파티명:", e.target.value);
+                console.log("파티명 수정:", e.target.value);
               }}
               disabled={isSubmitted}
             />
@@ -193,7 +221,7 @@ function PartyAdd() {
                 value={departureTime}
                 onChange={(e) => {
                   setDepartureTime(e.target.value);
-                  console.log("출발 시간:", e.target.value);
+                  console.log("출발 시간 수정:", e.target.value);
                 }}
                 disabled={isSubmitted}
                 style={{ fontFamily: "inherit" }}
@@ -212,7 +240,7 @@ function PartyAdd() {
                 value={arrivalTime}
                 onChange={(e) => {
                   setArrivalTime(e.target.value);
-                  console.log("도착 시간:", e.target.value);
+                  console.log("도착 시간 수정:", e.target.value);
                 }}
                 disabled={isSubmitted}
                 style={{ fontFamily: "inherit" }}
@@ -232,7 +260,7 @@ function PartyAdd() {
                 value={people}
                 onChange={(e) => {
                   setPeople(e.target.value);
-                  console.log("인원 입력:", e.target.value);
+                  console.log("인원 수정:", e.target.value);
                 }}
                 disabled={isSubmitted}
                 min="1"
@@ -243,8 +271,8 @@ function PartyAdd() {
         </Content>
       </Wrapper>
 
-      <Button onClick={handleJoinParty} disabled={isSubmitted}>
-        {isSubmitted ? "생성 완료!" : "파티 생성"}
+      <Button onClick={handleUpdateParty} disabled={isSubmitted}>
+        {isSubmitted ? "수정 완료!" : "파티 수정"}
       </Button>
 
       {errorMsg && (
@@ -263,4 +291,4 @@ function PartyAdd() {
   );
 }
 
-export default PartyAdd;
+export default PartyEdit;

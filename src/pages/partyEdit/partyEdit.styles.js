@@ -1,0 +1,121 @@
+import styled from "styled-components";
+import { colors } from "../../designSystem/DesignSystem";
+
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  height: 700px;
+  gap: 80px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const MapBox = styled.div`
+  width: 500px;
+  height: 600px;
+  border: 5px solid ${colors.gray[900]};
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`;
+
+export const Title = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  input {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid ${colors.gray[400]};
+    border-radius: 8px;
+    width: 400px;
+    outline: none;
+
+    &:focus {
+      border-color: ${colors.btnBasic.default};
+    }
+  }
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
+export const Img = styled.img`
+  width: 23px;
+  height: 23px;
+`;
+
+export const InfoTitle = styled.div`
+  display: flex;
+  font-size: 23px;
+  font-weight: bold;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const InfoItem = styled.div`
+  padding-left: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  input {
+    font-size: 19px;
+    padding: 5px 10px;
+    border: 2px solid ${colors.gray[400]};
+    border-radius: 8px;
+    width: 400px;
+    outline: none;
+
+    &:focus {
+      border-color: ${colors.btnBasic.default};
+    }
+  }
+`;
+
+export const Button = styled.button`
+  background-color: ${colors.btnBasic.default};
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 36px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 700px;
+
+  &:hover {
+    background-color: ${colors.btnBasic.hover};
+  }
+
+  &:disabled {
+    background-color: ${colors.btnBasic.disabled};
+    cursor: not-allowed;
+  }
+`;

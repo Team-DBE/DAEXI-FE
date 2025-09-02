@@ -9,6 +9,7 @@ import PartyAdd from "./pages/partyAdd/partyAdd.jsx";
 import { createGlobalStyle } from "styled-components";
 import PeopleList from "./pages/peopleList/peopleList.jsx";
 import AboutDev from "./pages/about/aboutDev.jsx";
+import PartyEdit from "./pages/partyEdit/partyEdtit.jsx";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -76,6 +77,14 @@ function App() {
           element={
             <Layout>
               <AboutDev />
+            </Layout>
+          }
+        />
+        <Route
+          path="/edit"
+          element={
+            <Layout>
+              <PartyEdit />
             </Layout>
           }
         />

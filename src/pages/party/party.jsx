@@ -22,17 +22,14 @@ function Party() {
   let latPosition = 36.391828;
   let lngPosition = 127.363368;
 
-  // 파티 정보
   const departure = "출발지 주소";
   const arrival = "도착지 주소";
   const time = "출발시간 ~ 도착시간";
   const people = "현재 파티 인원 " + "3 / 4" + "명";
   const partyName = "파티명";
 
-  // 참가 여부 저장
   const [isJoined, setIsJoined] = useState(false);
 
-  // 카카오맵 로드
   useEffect(() => {
     const KAKAO_KEY = import.meta.env.VITE_KAKAO_MAP_KEY;
 
@@ -61,12 +58,10 @@ function Party() {
     document.head.appendChild(script);
   }, []);
 
-  // 참가/탈퇴 버튼 클릭 핸들러
   const handleJoinToggle = () => {
     const newStatus = !isJoined;
     setIsJoined(newStatus);
 
-    // 콘솔에 저장된 값 모두 출력
     console.log("참가 상태:", newStatus ? "참가중" : "미참가");
     console.log("출발지:", departure);
     console.log("도착지:", arrival);
@@ -112,7 +107,11 @@ function Party() {
             <Img src={PartyIcon4} alt="인원" />
             인원
           </InfoTitle>
-          <InfoItem><Link to="/peopleList" style={{ fontWeight: "bold" }}>{people}</Link></InfoItem>
+          <InfoItem>
+            <Link to="/peopleList" style={{ fontWeight: "bold" }}>
+              {people}
+            </Link>
+          </InfoItem>
         </Info>
 
         <Button

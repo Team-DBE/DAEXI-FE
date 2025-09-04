@@ -33,7 +33,7 @@ const Header = () => {
           <NavItem to="/home">
             <Icon src={HomeIcon} alt="icon" />홈
           </NavItem>
-          <NavItem to="/">
+          <NavItem to="/list">
             <Icon src={PartyIcon} alt="icon" />
             파티
           </NavItem>

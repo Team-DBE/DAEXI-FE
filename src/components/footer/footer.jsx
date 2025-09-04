@@ -58,7 +58,7 @@ const Footer = () => {
             <NavTitle>빠른메뉴</NavTitle>
             <NavList>
               <NavLink to="/home">홈</NavLink>
-              <NavLink to="/">파티리스트</NavLink>
+              <NavLink to="/list">파티리스트</NavLink>
               <NavLink to="/login">로그인</NavLink>
               <NavLink to="/signup">회원가입</NavLink>
               <NavLink to="/mypage">마이페이지</NavLink>

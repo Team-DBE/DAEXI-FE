@@ -1,23 +1,18 @@
-import React, { useState } from "react"; // useState 훅 추가
-import "../../designSystem/reset.css"
+import React, { useState } from "react";
+import "../../designSystem/reset.css";
 import { Pencil } from "lucide-react";
 import account from "../../assets/images/account_circle.svg";
 import {
-  LeftContainer,
-  AccountInfoContainer,
-  PersonalInfoContainer,
   Contents,
-  InfoTitle,
-  InfoWrapper,
-  InfoContentsWrapper,
-  InfoLabel,
-  InfoValue,
+  Title,
+  Box,
+  BoxTitle,
+  SubContentsLabel,
+  SubContentsValue,
+  SubTitleContainer,
   ProfileImage,
   ProfileWrapper,
   EditIcon,
-  HiddenFileInput,
-  Name,
-  Description,
 } from "./mypage.styles.js";
 
 function MyPage() {
@@ -35,64 +30,67 @@ function MyPage() {
   };
 
   return (
-    <>
-      <Contents>
-        <LeftContainer>
-          <ProfileWrapper>
-            <ProfileImage src={profileImage} alt="프로필" />
-          </ProfileWrapper>
-
-          <Name>인천 사나이</Name>
-          <Description>인천 너무 멉니다..</Description>
-        </LeftContainer>
-
-        <InfoWrapper>
-          <InfoTitle>개인 정보</InfoTitle>
-          <PersonalInfoContainer>
-            <InfoContentsWrapper>
-              <InfoLabel>아이디</InfoLabel>
-              <InfoValue>Incheon Man</InfoValue>
-            </InfoContentsWrapper>
-            <InfoContentsWrapper>
-              <InfoLabel>비밀번호</InfoLabel>
-              <InfoValue>{maskPassword("sdjksjj1355d")}</InfoValue>
-            </InfoContentsWrapper>
-            <InfoContentsWrapper>
-              <InfoLabel>계좌번호</InfoLabel>
-              <InfoValue>ㅇㅇㅇㅇ</InfoValue>
-            </InfoContentsWrapper>
-          </PersonalInfoContainer>
-
-          <InfoTitle>계정 정보</InfoTitle>
-          <AccountInfoContainer>
-            <InfoContentsWrapper>
-              <InfoLabel>아이콘</InfoLabel>
-              <InfoValue>
-                <ProfileWrapper>
-                  <ProfileImage src={profileImage} alt="프로필" />
-                  <EditIcon htmlFor="profile-upload">
-                    <Pencil size={18} />
-                  </EditIcon>
-                  <HiddenFileInput
-                    id="profile-upload"
-                    type="file"
-                    onChange={handleImageChange}
-                  />
-                </ProfileWrapper>
-              </InfoValue>
-            </InfoContentsWrapper>
-            <InfoContentsWrapper>
-              <InfoLabel>이름</InfoLabel>
-              <InfoValue>인천 사나이</InfoValue>
-            </InfoContentsWrapper>
-            <InfoContentsWrapper>
-              <InfoLabel>설명</InfoLabel>
-              <InfoValue>인천 → 인천 너무 멉니다..</InfoValue>
-            </InfoContentsWrapper>
-          </AccountInfoContainer>
-        </InfoWrapper>
-      </Contents>
-    </>
+    <Contents>
+      <Title>개인정보</Title>
+      <Box>
+        <EditIcon>
+          <Pencil />
+        </EditIcon>
+        <BoxTitle>기본 정보</BoxTitle>
+        <SubTitleContainer>
+          <SubContentsLabel>이름</SubContentsLabel>
+          <SubContentsValue>홍길동</SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>생년월일</SubContentsLabel>
+          <SubContentsValue>2009년 12월 16일</SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>성별</SubContentsLabel>
+          <SubContentsValue>남성</SubContentsValue>
+        </SubTitleContainer>
+      </Box>
+      <Box>
+        <EditIcon>
+          <Pencil />
+        </EditIcon>
+        <BoxTitle>로그인 정보</BoxTitle>
+        <SubTitleContainer>
+          <SubContentsLabel>아이디</SubContentsLabel>
+          <SubContentsValue>홍길동</SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>비밀번호</SubContentsLabel>
+          <SubContentsValue>{maskPassword("123456")}</SubContentsValue>
+        </SubTitleContainer>
+      </Box>
+      <Box>
+        <EditIcon>
+          <Pencil />
+        </EditIcon>
+        <BoxTitle>공개 정보</BoxTitle>
+        <SubTitleContainer>
+          <SubContentsLabel>프로필 사진</SubContentsLabel>
+          <SubContentsValue>
+            <ProfileWrapper>
+              <ProfileImage src={profileImage} alt="프로필 사진" />
+            </ProfileWrapper>
+          </SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>별명</SubContentsLabel>
+          <SubContentsValue>동에 번쩍 서에 번쩍</SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>계좌번호</SubContentsLabel>
+          <SubContentsValue>토스뱅크 1908-8868-1229</SubContentsValue>
+        </SubTitleContainer>
+        <SubTitleContainer>
+          <SubContentsLabel>전화번호</SubContentsLabel>
+          <SubContentsValue>010-0000-0000</SubContentsValue>
+        </SubTitleContainer>
+      </Box>
+    </Contents>
   );
 }
 

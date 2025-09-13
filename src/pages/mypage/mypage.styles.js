@@ -1,161 +1,73 @@
 import styled from "styled-components";
-import { colors } from "../../designSystem/DesignSystem"
+import { colors } from "../../designSystem/DesignSystem";
 
 //전체 컨테이너
 export const Contents = styled.div`
   display: flex;
-`;
-
-//왼쪽 메뉴 컨테이너
-export const LeftContainer = styled.div`
-  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0px;
-  gap: 80px;
-
-  width: 400px;
-  height: 1256px;
-
-  background: ${colors.background};
-  box-shadow: 8px 0px 5px ${colors.gray[400]};
 `;
 
-//이름 
-export const Name = styled.h2`
-  position: relative;
-  bottom: 50px;
-  width: auto;
-  height: 48px;
+// 제목 개인정보
+export const Title = styled.h1`
+  width: 133px;
+  height: 44px;
 
-  font-family: 'Noto Sans KR';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 36px;
+  line-height: 44px;
 
-  text-align: center;
+  color: #000000;
 
-  color: ${colors.text};
+  margin: 50px;
 `;
 
-//설명
-export const Description = styled.span`
-  position: relative;
-  bottom: 120px;
-  width: auto;
-  height: 24px;
-
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-
-  color: ${colors.gray[500]};
-`;
-
-//정보 제목
-export const InfoTitle = styled.h2`
-  width: 230px;
-  height: 65px;
-
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-
-  color: ${colors.text};
-
-  margin-bottom: 40px;
-`;  
-
-//정보 컨테이너
-export const InfoWrapper = styled.div`
+//박스
+export const Box = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 40px 50px;
+  margin-bottom: 30px;
 
-  width: 1000px;
+  width: 700px;
+  min-height: 237px;
+  height: auto;
 
-  margin-left: 200px;
-  margin-top: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(8px 8px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
 `;
 
-//개인 정보
-export const PersonalInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px;
-  gap: 60px;
+//박스 제목
+export const BoxTitle = styled.h2`
+  font-size: 32px;
 
-  width: auto;
-  height: 324px;
-
-  background: ${colors.background};
-  border: 1px solid ${colors.gray[300]};
-  box-shadow: 4px 4px 5px ${colors.gray[400]};
-  border-radius: 20px;
-
-  margin-bottom: 120px;
+  width: 632px;
+  height: 39px;
 `;
 
-//정보 내용 컨테이너
-export const InfoContentsWrapper = styled.div`
+//서브 타이틀 컨테이너
+export const SubTitleContainer = styled.div`
   display: flex;
   align-items: center;
-
+  margin-top: 30px;
   width: 100%;
-
-  font-size: 40px;
 `;
 
-// 아이디, 이름제목 등
-export const InfoLabel = styled.span`
+//아이디, 이름 제목
+export const SubContentsLabel = styled.span`
   flex: 0 0 200px;
-  font-size: 40px;
-  font-weight: 600;
-  color: ${colors.text};
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
 `;
 
 // 아이디, 이름에 대한 내용
-export const InfoValue = styled.span`
+export const SubContentsValue = styled.span`
   flex: 1;
-  font-size: 40px;
-  font-weight: 600;
-  color: ${colors.text};
-
-  display: flex;
-  align-items: center;
-
-  margin-left: 80px;
-`;
-
-//계정 정보
-export const AccountInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px;
-  gap: 60px;
-
-  width: auto;
-  height: auto;
-
-  background: ${colors.background};
-  border: 1px solid ${colors.gray[300]};
-  box-shadow: 4px 4px 5px ${colors.gray[400]};
-  border-radius: 20px;
-`;
-
-// 프로필 전체 감싸는 컨테이너
-export const ProfileWrapper = styled.div`
-  position: relative;
-  width: 120px;
-  height: 120px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
 `;
 
 // 실제 프로필 이미지
@@ -164,27 +76,25 @@ export const ProfileImage = styled.img`
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid ${colors.gray[300]};
+`;
+
+// 프로필 전체 감싸는 컨테이너
+export const ProfileWrapper = styled.div`
+  position: relative;
+  width: 60px;
+  height: 60px;
 `;
 
 // 수정 아이콘 (연필)
 export const EditIcon = styled.label`
   position: absolute;
-  bottom: 0px;
-  right: -25px;
-  width: 36px;
-  height: 36px;
+  right: 20px;
   border-radius: 50%;
-
-  transform: scale(1.5);
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-
-  font-size: 18px;
 `;
 
 // 실제 파일 업로드 input (숨김)

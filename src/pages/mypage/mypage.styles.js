@@ -114,6 +114,21 @@ export const ProfileWrapper = styled.div`
   height: 60px;
 `;
 
+// 프로필 수정 아이콘 (연필)
+export const EditProfileIcon = styled.label`
+  position: absolute;
+  top: 145px;
+  right: 375px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 10;
+`;
+
+
 // 수정 아이콘 (연필)
 export const EditIcon = styled.label`
   position: absolute;

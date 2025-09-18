@@ -18,6 +18,7 @@ import {
   SubContentsChangeGender,
   SaveButton,
   CancelButton,
+  EditProfileIcon,
 } from "./mypage.styles.js";
 
 function MyPage() {
@@ -232,29 +233,96 @@ function MyPage() {
       </Box>
       <Box>
         <EditIcon>
-          <Pencil />
+          <Pencil onClick={startEditPublic} />
         </EditIcon>
-        <BoxTitle>공개 정보</BoxTitle>
-        <SubTitleContainer>
-          <SubContentsLabel>프로필 사진</SubContentsLabel>
-          <SubContentsValue>
-            <ProfileWrapper>
-              <ProfileImage src={profileImage} alt="프로필 사진" />
-            </ProfileWrapper>
-          </SubContentsValue>
-        </SubTitleContainer>
-        <SubTitleContainer>
-          <SubContentsLabel>별명</SubContentsLabel>
-          <SubContentsValue>동에 번쩍 서에 번쩍</SubContentsValue>
-        </SubTitleContainer>
-        <SubTitleContainer>
-          <SubContentsLabel>계좌번호</SubContentsLabel>
-          <SubContentsValue>토스뱅크 1908-8868-1229</SubContentsValue>
-        </SubTitleContainer>
-        <SubTitleContainer>
-          <SubContentsLabel>전화번호</SubContentsLabel>
-          <SubContentsValue>010-0000-0000</SubContentsValue>
-        </SubTitleContainer>
+        {!isEditingPublic ? (
+          <>
+            <BoxTitle>공개 정보</BoxTitle>
+            <SubTitleContainer>
+              <SubContentsLabel>프로필 사진</SubContentsLabel>
+              <SubContentsValue>
+                <ProfileWrapper>
+                  <ProfileImage src={profileImage} alt="프로필 사진" />
+                </ProfileWrapper>
+              </SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>별명</SubContentsLabel>
+              <SubContentsValue>{publicInfo.별명}</SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>계좌번호</SubContentsLabel>
+              <SubContentsValue>{publicInfo.계좌번호}</SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>전화번호</SubContentsLabel>
+              <SubContentsValue>{publicInfo.전화번호}</SubContentsValue>
+            </SubTitleContainer>
+          </>
+        ) : (
+          // 수정 모드
+          <>
+            <BoxTitle>공개 정보</BoxTitle>
+            <SubTitleContainer>
+              <SubContentsLabel>프로필 사진</SubContentsLabel>
+              <input
+                type="file"
+                id="profileImage"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    setTempProfileImage(URL.createObjectURL(file));
+                  }
+                }}
+              />
+              <EditProfileIcon onClick={() => document.getElementById("profileImage").click()}>
+                <Pencil />
+              </EditProfileIcon>
+              <SubContentsValue>
+                <ProfileWrapper>
+                  <ProfileImage src={tempProfileImage} alt="프로필 사진" />
+                </ProfileWrapper>
+              </SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>기존 별명</SubContentsLabel>
+              <SubContentsValue>{publicInfo.별명}</SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>변경할 별명</SubContentsLabel>
+              <SubContentsChangeValue
+                value={tempPublic.별명}
+                onChange={(e) => setTempPublic({ ...tempPublic, 별명: e.target.value })}
+              />
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>기존 계좌번호</SubContentsLabel>
+              <SubContentsValue>{publicInfo.계좌번호}</SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>변경할 계좌번호</SubContentsLabel>
+              <SubContentsChangeValue
+                value={tempPublic.계좌번호}
+                onChange={(e) => setTempPublic({ ...tempPublic, 계좌번호: e.target.value })}
+              />
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>기존 전화번호</SubContentsLabel>
+              <SubContentsValue>{publicInfo.전화번호}</SubContentsValue>
+            </SubTitleContainer>
+            <SubTitleContainer>
+              <SubContentsLabel>변경할 전화번호</SubContentsLabel>
+              <SubContentsChangeValue
+                value={tempPublic.전화번호}
+                onChange={(e) => setTempPublic({ ...tempPublic, 전화번호: e.target.value })}
+              />
+            </SubTitleContainer>
+            <CancelButton onClick={cancelEditPublic}>취소</CancelButton>
+            <SaveButton onClick={savePublic}>저장</SaveButton>
+          </>
+        )}
       </Box>
     </Contents>
   );

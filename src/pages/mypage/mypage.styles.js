@@ -65,9 +65,38 @@ export const SubContentsLabel = styled.span`
 
 // 아이디, 이름에 대한 내용
 export const SubContentsValue = styled.span`
+  max-width: 350px;
+  width: auto;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
+`;
+
+// 변경할 값
+export const SubContentsChangeValue = styled.input`
+  max-width: 230px;
+  width: auto;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+  background: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+`;
+
+// 성별 변경할 값
+export const SubContentsChangeGender = styled.select`
+  display: inline:
   flex: 1;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.6);
+  border: none;
+  background: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
 `;
 
 // 실제 프로필 이미지
@@ -100,4 +129,50 @@ export const EditIcon = styled.label`
 // 실제 파일 업로드 input (숨김)
 export const HiddenFileInput = styled.input`
   display: none;
+`;
+
+//저장 버튼
+export const SaveButton = styled.button`
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  right: 50px;
+  bottom: 35px;
+
+  width: 57px;
+  height: 44px;
+
+  background: #FF9615;
+  border-radius: 50px;
+  border: none;
+  
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+`;
+
+//취소 버튼
+export const CancelButton = styled.button`
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  right: 120px;
+  bottom: 35px;
+
+  width: 57px;
+  height: 44px;
+
+  background: #FF3B3B;
+  border-radius: 50px;
+  border: none;
+
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
 `;

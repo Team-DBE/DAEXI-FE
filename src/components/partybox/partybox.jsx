@@ -1,7 +1,9 @@
 import React from "react";
 import { Container, Name, Count, Departure, Time, Button } from "./partybox.styles";
 
-function PartyBox({ name, count, departure, time }) {
+function PartyBox({ party }) {
+  const { name, count, departure, time } = party;
+
   return (
     <Container>
       <div>
